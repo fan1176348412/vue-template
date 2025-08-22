@@ -1,0 +1,22 @@
+[*.{js,jsx,ts,tsx,vue}]
+
+# 缩进使用空格
+indent_style = space
+
+# 每次缩进2个空格
+indent_size = 2
+
+# 自动删除行尾多余空格
+trim_trailing_whitespace = true
+
+# 换行符使用 LF
+end_of_line = lf
+
+# 文件编码 UTF-8
+charset = utf-8
+
+# 文件末尾强制插入空行
+insert_final_newline = true
+
+# 单行最大长度限制
+max_line_length = 100

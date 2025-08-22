@@ -1,0 +1,14 @@
+{
+  // 启动文件嵌套，使文件栏简洁
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "tsconfig.json": "tsconfig.*.json, env.d.ts",
+    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .oxlint*, oxlint*, .prettier*, prettier*, .editorconfig, stylelint*, .stylelint*"
+  },
+  // 显式保存时修复代码
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "git.ignoreLimitWarning": true,
+}

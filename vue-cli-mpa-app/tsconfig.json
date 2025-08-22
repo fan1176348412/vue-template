@@ -1,0 +1,59 @@
+{
+  "compilerOptions": {
+    // 指定编译后的 JavaScript 目标版本为最新ES标准
+    "target": "ESNext",
+    // 指定模块系统类型
+    "module": "ESNext",
+
+    // 模块解析策略为 Node.js 风格的模块解析
+    "moduleResolution": "node",
+    // 允许从没有默认导出的模块中进行默认导入
+    "allowSyntheticDefaultImports": true,
+    /**
+     * 启用 ES 模块互操作性
+     * 允许使用 import React from 'react' 而不是 import * as React from 'react'
+     */
+    "esModuleInterop": true,
+
+    // 启用严格模式
+    "strict": true,
+    // 跳过 .d.ts 的检查
+    "skipLibCheck": true,
+    // 强制文件名大小写一致
+    "forceConsistentCasingInFileNames": true,
+
+    "jsx": "preserve",
+
+    // 使用 ECMAScript 标准的类字段定义方式
+    "useDefineForClassFields": true,
+    // 包含的库文件定义
+    "lib": ["ESNext", "DOM", "DOM.Iterable", "ScriptHost"],
+    // 包含的类型定义文件
+    "types": ["webpack-env"],
+
+    // 生成 sourceMap
+    "sourceMap": true,
+    // 允许导入 TypeScript 扩展名（.ts, .tsx）
+    // ts 4 不支持该选项
+    // "allowImportingTsExtensions": false,
+    // 解析 JSON 模块
+    "resolveJsonModule": true,
+
+    // 基础路径
+    "baseUrl": ".",
+    // 路径映射
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.d.ts",
+    "types/**/*.d.ts"
+  ],
+
+  "exclude": ["node_modules", "dist"]
+}
