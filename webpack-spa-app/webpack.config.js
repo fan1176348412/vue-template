@@ -18,12 +18,15 @@ export default {
       : '/',
   },
   resolve: {
+    // 文件后缀
     extensions: ['.ts', '.js', '.vue', '.json', '.less', '.woff', '.ttf'],
+    // 路径别名
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
   module: {
+    // 解析规则
     rules: [
       // vue 文件
       {
