@@ -43,6 +43,21 @@ export default defineConfig({
     },
     extensions: ['.vue', '.ts'],
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            // 把所有第三方库拆成一个 vendors 包
+            return 'vendor';
+          }
+        },
+        chunkFileNames: 'chunk-[name].js',
+        entryFileNames: '[name].js',
+        assetFileNames: 'assets/[name].[ext]',
+      },
+    },
+  },
   server: {
     proxy: {
       '/api': {

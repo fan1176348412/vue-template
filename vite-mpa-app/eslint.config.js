@@ -10,7 +10,7 @@ import pluginPrettier from 'eslint-plugin-prettier';
 
 export default defineConfigWithVueTs(
   // 忽略的文件
-  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
+  globalIgnores(['**/dist/**']),
   // Vue 基础规则集
   pluginVue.configs['flat/essential'],
   // TypeScript 推荐规则集
@@ -33,7 +33,7 @@ export default defineConfigWithVueTs(
     files: ['**/*.{ts,mts,tsx,vue}'],
     rules: {
       // console 语句规则：生产环境警告，开发环境关闭
-      'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+      'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'error',
       // debugger 语句规则：生产环境警告，开发环境关闭
       'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
       // Vue 组件命名规则：允许单个单词的组件名

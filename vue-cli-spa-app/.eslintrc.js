@@ -13,6 +13,7 @@ module.exports = {
     // Vue 3 基础规则集，包含 Vue 3 语法检查
     'plugin:vue/vue3-essential',
     // ESLint 推荐规则集
+    // https://eslint.org/docs/latest/rules/
     'eslint:recommended',
     // TypeScript 推荐规则集
     '@vue/typescript/recommended',

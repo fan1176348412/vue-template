@@ -19,4 +19,7 @@ module.exports = defineConfig({
     ? `${PROJECT_CONFIG.CDN}/${PROJECT_CONFIG.PREFIX}${PROJECT_CONFIG.NAME}/`
     : './',
   transpileDependencies: true,
+  devServer: {
+    proxy: 'http://localhost:3000',
+  },
 });

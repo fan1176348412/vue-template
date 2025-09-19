@@ -28,7 +28,9 @@ const isOnline = process.env.NODE_ENV === 'production';
 export default defineConfig({
   base: isOnline ? `${PROJECT_CONFIG.CDN}/${PROJECT_CONFIG.PREFIX}${PROJECT_CONFIG.NAME}/` : './',
   plugins: [
-    vue(),
+    vue({
+      customElement: false,
+    }),
     vueDevTools({
       launchEditor: 'cursor',
     }),
@@ -61,6 +63,17 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: getEntries(),
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            // 把所有第三方库拆成一个 vendors 包
+            return 'vendor';
+          }
+        },
+        chunkFileNames: 'chunk-[name].js',
+        entryFileNames: '[name].js',
+        assetFileNames: 'assets/[name].[ext]',
+      },
     },
   },
   appType: 'mpa',
